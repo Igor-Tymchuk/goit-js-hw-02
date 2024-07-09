@@ -1,14 +1,19 @@
 'use strict';
+
 function checkForSpam(message) {
     let messageLower = message.toLowerCase();
-    let wordsOfSpam = ["spam", "sale"];
-    for (let word of wordsOfSpam) {
-        if (messageLower.includes(word)) {
-            return true;
-        }
+    if (messageLower.includes("spam")) {
+        return true;
     }
-    return false;
+    else if (messageLower.includes("sale")) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
+
+
 console.log(checkForSpam("Latest technology news")); // false
 console.log(checkForSpam("JavaScript weekly newsletter")); // false
 console.log(checkForSpam("Get best sale offers now!")); // true
